@@ -17,6 +17,7 @@ import {
   DebugInstructions,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen';
+
 import { styles } from './styles';
 
 // eslint-disable-next-line init-declarations
