@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+
+import { white, dark } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor: Colors.white,
+    backgroundColor: white,
     borderRadius: 5,
     flexDirection: 'row',
     height: 90,
@@ -23,7 +24,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   subtitle: {
-    color: Colors.dark,
+    color: dark,
     fontSize: 15
   }
 });

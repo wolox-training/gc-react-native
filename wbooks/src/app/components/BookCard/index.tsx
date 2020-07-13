@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 
 import { styles } from './styles';
 
-const bookImage = require('./assets/img_book1.png');
+import bookImage from './assets/img_book1.png';
 
 const BookCard = () => {
   return (
