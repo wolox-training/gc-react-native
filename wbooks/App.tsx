@@ -12,9 +12,6 @@ import React from 'react';
 
 import BookCard from './src/app/components/BookCard';
 
-// eslint-disable-next-line init-declarations
-declare const global: { HermesInternal: null | {} };
-
 const App = () => {
   return (
     <>
