@@ -16,6 +16,7 @@ jobs:
     
     - name: Run Lint
       run: |
+        cd wbooks
         yarn
         yarn run lint
         yarn run tsc
