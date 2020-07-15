@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
-import { lithtBlueBackgroud } from '../../../constants/colors';
+import { lightBlueBackgroud } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   bookCardSeparator: {
     height: 10
   },
   container: {
-    backgroundColor: lithtBlueBackgroud,
+    backgroundColor: lightBlueBackgroud,
     padding: 15
   }
 });
