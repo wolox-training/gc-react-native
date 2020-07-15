@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
+import { Book } from '../../interfaces/books';
 import { styles } from './styles';
-import bookImage from './assets/img_book1.png';
 
-const BookCard = () => {
+const BookCard = ({ title, author, img }: Book) => {
   return (
     <View style={styles.card}>
-      <Image style={styles.cardImage} source={bookImage} />
+      <Image style={styles.cardImage} source={{ uri: img }} />
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>A Little Bird Told Me</Text>
-        <Text style={styles.subtitle}>Timonthy Cross</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subtitle}>{author}</Text>
       </View>
     </View>
   );
