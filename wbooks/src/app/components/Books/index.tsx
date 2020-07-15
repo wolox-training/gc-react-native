@@ -9,9 +9,9 @@ import { styles } from '../Books/styles';
 const renderItem = ({ item }: { item: Book }) => (
   <BookCard title={item.title} author={item.author} img={item.img} />
 );
-const renderSeparator = () => <View style={styles.bookCardSeparator} />;
 
 const BooksList = () => {
+  const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   return (
     <View style={styles.container}>
       <FlatList data={BOOKS_DATA} renderItem={renderItem} ItemSeparatorComponent={renderSeparator} />
