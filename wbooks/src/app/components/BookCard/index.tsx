@@ -1,19 +1,17 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
-import { Book } from '../../interfaces/books';
+import { BookProps } from '../../interfaces/books';
 import { styles } from './styles';
 
-const BookCard = ({ title, author, img }: Book) => {
-  const navigation = useNavigation();
+const BookCard = ({ book, onClick }: BookProps) => {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('BookDetail')}>
+    <TouchableOpacity onPress={onClick}>
       <View style={styles.card}>
-        <Image style={styles.cardImage} source={{ uri: img }} />
+        <Image style={styles.cardImage} source={{ uri: book.img }} />
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>{author}</Text>
+          <Text style={styles.title}>{book.title}</Text>
+          <Text style={styles.subtitle}>{book.author}</Text>
         </View>
       </View>
     </TouchableOpacity>
