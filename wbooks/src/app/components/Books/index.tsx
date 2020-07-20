@@ -8,7 +8,7 @@ import { styles } from '../Books/styles';
 
 const BooksList = () => {
   const renderItem = ({ item }: { item: Book }) => (
-    <BookCard title={item.title} author={item.author} img={item.img} />
+    <BookCard key={item.id} title={item.title} author={item.author} img={item.img} />
   );
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   return (
