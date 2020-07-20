@@ -8,7 +8,7 @@ import { styles } from '../Books/styles';
 
 const BooksList = ({ navigation }: any) => {
   const handleClick = () => navigation.navigate('BookDetail');
-  const renderItem = ({ item }: { item: Book }) => <BookCard book={item} onClick={handleClick} />;
+  const renderItem = ({ item }: { item: Book }) => <BookCard key={item.id} book={item} onClick={handleClick} />;
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   return (
     <View style={styles.container}>
