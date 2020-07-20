@@ -5,10 +5,13 @@ import BookCard from '../BookCard';
 import { BOOKS_DATA } from '../../../constants/mocks';
 import { Book } from '../../interfaces/books';
 import { styles } from '../Books/styles';
+import { Routes } from '../../../constants/routes';
 
 const BooksList = ({ navigation }: any) => {
-  const handleClick = () => navigation.navigate('BookDetail');
-  const renderItem = ({ item }: { item: Book }) => <BookCard key={item.id} book={item} onClick={handleClick} />;
+  const handleClick = () => navigation.navigate(Routes.BookDetail);
+  const renderItem = ({ item }: { item: Book }) => (
+    <BookCard key={item.id} book={item} onClick={handleClick} />
+  );
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   return (
     <View style={styles.container}>
