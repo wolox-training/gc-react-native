@@ -26,17 +26,8 @@ const BookDetail = ({ route }: Route) => {
         <Button
           title={{ text: 'ADD TO WISHLIST', style: styles.wishListButtonTitle }}
           style={styles.wishListButton}
-          onPress={() => {
-            console.log('ADD TO WISHLIST');
-          }}
         />
-        <Button
-          title={{ text: 'RENT', style: styles.rentButtonTitle }}
-          style={styles.rentButton}
-          onPress={() => {
-            console.log('RENT');
-          }}
-        />
+        <Button title={{ text: 'RENT', style: styles.rentButtonTitle }} style={styles.rentButton} />
       </View>
     </View>
   );
