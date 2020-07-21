@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
 import { ButtonProps } from '../../../interfaces/button';
-import { styles } from './styles';
+import styles from './styles';
 
 const Button = ({ title, style, onPress }: ButtonProps) => {
   return (

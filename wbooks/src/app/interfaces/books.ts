@@ -3,6 +3,9 @@ export interface Book {
   author: string;
   title: string;
   img: string;
+  genre?: string;
+  publisher?: string;
+  year?: string;
 }
 
 export interface BookProps {

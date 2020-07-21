@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { lightBlue, white, dark, available, ligthBlueButton } from '../../../constants/colors';
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   background: {
     backgroundColor: lightBlue,
     padding: 15,
@@ -65,3 +65,5 @@ export const styles = StyleSheet.create({
     color: white
   }
 });
+
+export default styles;
