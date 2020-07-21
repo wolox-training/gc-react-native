@@ -10,12 +10,12 @@
 
 import React from 'react';
 
-import BookCard from './src/app/components/BookCard';
+import BooksList from './src/app/components/BooksList';
 
 const App = () => {
   return (
     <>
-      <BookCard />
+      <BooksList />
     </>
   );
 };
