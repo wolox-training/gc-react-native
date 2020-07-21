@@ -20,7 +20,9 @@ const BookDetail = ({ route }: Route) => {
         <View style={styles.card}>
           <Image style={styles.image} source={image} />
           <View style={styles.infoContainer}>
-            <Text numberOfLines={1} style={styles.title}>{title}</Text>
+            <Text numberOfLines={1} style={styles.title}>
+              {title}
+            </Text>
             <Text style={status.style}>{status.text}</Text>
             <Text style={styles.info}>{author}</Text>
             <Text style={styles.info}>{year}</Text>
