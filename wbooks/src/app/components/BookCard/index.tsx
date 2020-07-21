@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import { BookProps } from '../../interfaces/books';
-import { styles } from './styles';
+import styles from './styles';
 
 const BookCard = ({ book, onClick }: BookProps) => {
   return (

@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { lightBlue } from '../../../constants/colors';
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   bookCardSeparator: {
     height: 10
   },
@@ -11,3 +11,5 @@ export const styles = StyleSheet.create({
     padding: 15
   }
 });
+
+export default styles;
