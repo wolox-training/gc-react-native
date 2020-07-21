@@ -1,5 +1,6 @@
 export interface ButtonProps {
-  title: any;
-  style: any;
+  text: string;
+  fill?: boolean;
   onPress?: any;
+  disabled?: boolean;
 }

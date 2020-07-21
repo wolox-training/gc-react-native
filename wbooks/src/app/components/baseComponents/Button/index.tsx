@@ -4,10 +4,19 @@ import { Text, TouchableOpacity } from 'react-native';
 import { ButtonProps } from '../../../interfaces/button';
 import styles from './styles';
 
-const Button = ({ title, style, onPress }: ButtonProps) => {
+const Button = ({ text, fill, onPress, disabled }: ButtonProps) => {
+  let buttonStyle = {};
+  if (disabled) {
+    buttonStyle = [styles.button, styles.disabledButton];
+  } else if (fill) {
+    buttonStyle = [styles.button, styles.fillButton];
+  } else {
+    buttonStyle = styles.button;
+  }
+  const titleStyle = fill ? [styles.title, styles.fillButtonTitle] : styles.title;
   return (
-    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-      <Text style={[styles.title, title.style]}>{title.text}</Text>
+    <TouchableOpacity style={buttonStyle} disabled={disabled} onPress={onPress}>
+      <Text style={titleStyle}>{text}</Text>
     </TouchableOpacity>
   );
 };

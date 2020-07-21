@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { lightBlue, white, dark, available, notAvailable, ligthBlueButton } from '../../../constants/colors';
+import { lightBlue, white, dark, available, notAvailable } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   background: {
@@ -22,53 +22,32 @@ const styles = StyleSheet.create({
     width: 80
   },
   card: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: 20
   },
   infoContainer: {
     marginLeft: 20,
     flexDirection: 'column'
   },
   title: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold'
   },
   statusAvailable: {
-    fontSize: 15,
+    fontSize: 16,
     marginTop: 5,
     fontWeight: 'bold',
     color: available
   },
   statusNotAvailable: {
-    fontSize: 15,
+    fontSize: 16,
     marginTop: 5,
     fontWeight: 'bold',
     color: notAvailable
   },
   info: {
     color: dark,
-    fontSize: 15
-  },
-  wishListButton: {
-    backgroundColor: white,
-    flexDirection: 'column',
-    color: ligthBlueButton,
-    borderColor: ligthBlueButton,
-    borderWidth: 2,
-    marginTop: 30
-  },
-  rentButton: {
-    backgroundColor: ligthBlueButton,
-    flexDirection: 'column',
-    color: white,
-    borderColor: ligthBlueButton,
-    borderWidth: 2,
-    marginTop: 10
-  },
-  wishListButtonTitle: {
-    color: ligthBlueButton
-  },
-  rentButtonTitle: {
-    color: white
+    fontSize: 16
   }
 });
 

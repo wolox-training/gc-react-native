@@ -27,11 +27,8 @@ const BookDetail = ({ route }: Route) => {
             <Text style={styles.info}>{genre}</Text>
           </View>
         </View>
-        <Button
-          title={{ text: 'ADD TO WISHLIST', style: styles.wishListButtonTitle }}
-          style={styles.wishListButton}
-        />
-        <Button title={{ text: 'RENT', style: styles.rentButtonTitle }} style={styles.rentButton} />
+        <Button text={'ADD TO WISHLIST'} />
+        <Button text={'RENT'} fill={true} disabled={!available} />
       </View>
     </View>
   );
