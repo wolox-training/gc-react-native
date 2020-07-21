@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 
 import { Book } from '../../interfaces/books';
-import { styles } from './styles';
+import styles from './styles';
 
 const BookCard = ({ title, author, img }: Book) => {
   return (

@@ -10,7 +10,7 @@
 
 import React from 'react';
 
-import BooksList from './src/app/components/Books';
+import BooksList from './src/app/components/BooksList';
 
 const App = () => {
   return (

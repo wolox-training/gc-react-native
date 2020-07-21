@@ -4,7 +4,7 @@ import { View, FlatList } from 'react-native';
 import BookCard from '../BookCard';
 import { BOOKS_DATA } from '../../../constants/mocks';
 import { Book } from '../../interfaces/books';
-import { styles } from '../Books/styles';
+import styles from '../BooksList/styles';
 
 const BooksList = () => {
   const renderItem = ({ item }: { item: Book }) => (
