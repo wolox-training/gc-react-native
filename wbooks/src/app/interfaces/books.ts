@@ -4,3 +4,8 @@ export interface Book {
   title: string;
   img: string;
 }
+
+export interface BookProps {
+  book: Book;
+  onClick: () => void;
+}
