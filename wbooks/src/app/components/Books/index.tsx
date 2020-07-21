@@ -8,10 +8,10 @@ import { styles } from '../Books/styles';
 import { Routes } from '../../../constants/routes';
 
 const BooksList = ({ navigation }: any) => {
-  const handleClick = () => navigation.navigate(Routes.BookDetail);
-  const renderItem = ({ item }: { item: Book }) => (
-    <BookCard key={item.id} book={item} onClick={handleClick} />
-  );
+  const renderItem = ({ item }: { item: Book }) => {
+    const handleClick = () => navigation.navigate(Routes.BookDetail, item);
+    return <BookCard key={item.id} book={item} onClick={handleClick} />;
+  };
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   return (
     <View style={styles.container}>

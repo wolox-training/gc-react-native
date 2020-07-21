@@ -4,15 +4,17 @@ import { View, Text, Image } from 'react-native';
 import { styles } from './styles';
 import Button from '../baseComponents/Button';
 import defaultImage from '../BookCard/assets/img_book1.png';
+import { Route } from '../../interfaces/route';
 
-const BookDetail = () => {
+const BookDetail = ({ route }: Route) => {
+  console.log(route.params);
   return (
     <View style={styles.background}>
       <View style={styles.container}>
         <View style={styles.card}>
           <Image style={styles.image} source={defaultImage} />
           <View style={styles.infoContainer}>
-            <Text style={styles.title}>Titulo</Text>
+            <Text style={styles.title}>{route.params.title}</Text>
             <Text style={styles.status}>Status</Text>
             <Text style={styles.info}>Author</Text>
             <Text style={styles.info}>Age</Text>
