@@ -6,6 +6,7 @@ export interface Book {
   genre?: string;
   publisher?: string;
   year?: string;
+  available?: boolean;
 }
 
 export interface BookProps {

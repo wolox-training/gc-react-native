@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { lightBlue, white, dark, available, ligthBlueButton } from '../../../constants/colors';
+import { lightBlue, white, dark, available, notAvailable, ligthBlueButton } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   background: {
@@ -32,11 +32,17 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold'
   },
-  status: {
+  statusAvailable: {
     fontSize: 15,
     marginTop: 5,
     fontWeight: 'bold',
     color: available
+  },
+  statusNotAvailable: {
+    fontSize: 15,
+    marginTop: 5,
+    fontWeight: 'bold',
+    color: notAvailable
   },
   info: {
     color: dark,
