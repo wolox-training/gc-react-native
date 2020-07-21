@@ -4,8 +4,8 @@ import { View, FlatList } from 'react-native';
 import BookCard from '../BookCard';
 import { BOOKS_DATA } from '../../../constants/mocks';
 import { Book } from '../../interfaces/books';
-import { styles } from '../Books/styles';
-import { Routes } from '../../../constants/routes';
+import styles from './styles';
+import Routes from '../../../constants/routes';
 
 const BooksList = ({ navigation }: any) => {
   const renderItem = ({ item }: { item: Book }) => {
