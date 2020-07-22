@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column',
     borderColor: ligthBlueButton,
     backgroundColor: white
   },

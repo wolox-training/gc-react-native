@@ -33,17 +33,14 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold'
   },
-  statusAvailable: {
-    fontSize: 16,
-    marginTop: 5,
-    fontWeight: 'bold',
-    color: available
-  },
-  statusNotAvailable: {
+  status: {
     fontSize: 16,
     marginTop: 5,
     fontWeight: 'bold',
     color: notAvailable
+  },
+  available: {
+    color: available
   },
   info: {
     color: dark,

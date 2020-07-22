@@ -13,10 +13,9 @@ const Button = ({ text, fill, onPress, disabled }: ButtonProps) => {
   } else {
     buttonStyle = styles.button;
   }
-  const titleStyle = fill ? [styles.title, styles.fillButtonTitle] : styles.title;
   return (
     <TouchableOpacity style={buttonStyle} disabled={disabled} onPress={onPress}>
-      <Text style={titleStyle}>{text}</Text>
+      <Text style={fill ? [styles.title, styles.fillButtonTitle] : styles.title}>{text}</Text>
     </TouchableOpacity>
   );
 };
