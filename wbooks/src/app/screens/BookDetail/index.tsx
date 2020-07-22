@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
-import Button from '../baseComponents/Button';
-import defaultImage from '../BookCard/assets/img_book1.png';
+import Button from '../../components/baseComponents/Button';
+import defaultImage from '../../components/BookCard/assets/img_book1.png';
 import { Route } from '../../interfaces/route';
 import { Book } from '../../interfaces/books';
 
@@ -20,7 +20,7 @@ const BookDetail = ({ route }: Route) => {
             <Text numberOfLines={1} style={styles.title}>
               {title}
             </Text>
-            <Text style={available ? [styles.status, styles.available] : styles.status}>
+            <Text style={[styles.status, available && styles.available]}>
               {available ? 'Available' : 'Not available'}
             </Text>
             <Text style={styles.info}>{author}</Text>

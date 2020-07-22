@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
 
-import BookCard from '../BookCard';
+import BookCard from '../../components/BookCard';
 import { BOOKS_DATA } from '../../../constants/mocks';
 import { Book } from '../../interfaces/books';
 import styles from './styles';

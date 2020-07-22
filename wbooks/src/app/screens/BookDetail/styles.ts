@@ -6,12 +6,11 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: lightBlue,
     padding: 15,
-    height: '100%'
+    flex: 1
   },
   container: {
     backgroundColor: white,
     borderRadius: 5,
-    flexDirection: 'column',
     height: 280,
     paddingHorizontal: 30,
     paddingVertical: 15,
@@ -26,8 +25,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   infoContainer: {
-    marginLeft: 20,
-    flexDirection: 'column'
+    marginLeft: 20
   },
   title: {
     fontSize: 22,

@@ -9,7 +9,7 @@ const Button = ({ text, fill, onPress, disabled }: ButtonProps) => (
     style={[styles.button, fill && styles.fillButton, disabled && styles.disabledButton]}
     disabled={disabled}
     onPress={onPress}>
-    <Text style={fill ? [styles.title, styles.fillButtonTitle] : styles.title}>{text}</Text>
+    <Text style={[styles.title, fill && styles.fillButtonTitle]}>{text}</Text>
   </TouchableOpacity>
 );
 
