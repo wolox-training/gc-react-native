@@ -6,11 +6,7 @@ import styles from './styles';
 
 const Button = ({ text, fill, onPress, disabled }: ButtonProps) => (
   <TouchableOpacity
-    style={
-      disabled
-        ? [styles.button, fill && styles.fillButton, styles.disabledButton]
-        : [styles.button, fill && styles.fillButton]
-    }
+    style={[styles.button, fill && styles.fillButton, disabled && styles.disabledButton]}
     disabled={disabled}
     onPress={onPress}>
     <Text style={fill ? [styles.title, styles.fillButtonTitle] : styles.title}>{text}</Text>
