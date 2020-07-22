@@ -10,10 +10,9 @@ import { Book } from '../../interfaces/books';
 const BookDetail = ({ route }: Route) => {
   const { title, author, img, year, genre, available }: Book = route.params;
   const image = img ? { uri: img } : defaultImage;
-  const status = {
-    text: available ? 'Available' : 'Not available',
-    style: available ? styles.statusAvailable : styles.statusNotAvailable
-  };
+  const status = available
+    ? { text: 'Available', style: styles.statusAvailable }
+    : { text: 'Not available', style: styles.statusNotAvailable };
   return (
     <View style={styles.background}>
       <View style={styles.container}>
