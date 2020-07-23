@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
-import Button from '../../components/baseComponents/Button';
+import Button from '../../components/Button';
 import defaultImage from '../../components/BookCard/assets/img_book1.png';
 import { Route } from '../../interfaces/route';
 import { Book } from '../../interfaces/books';

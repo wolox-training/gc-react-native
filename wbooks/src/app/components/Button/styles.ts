@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { grey, ligthBlueButton, white } from '../../../../constants/colors';
+import { grey, ligthBlueButton, white } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   button: {
