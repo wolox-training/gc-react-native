@@ -31,7 +31,7 @@ const CommentList = ({ comments }: any) => {
         <Button
           text={'View all'}
           onPress={viewAll}
-          buttonStyle={styles.viewAllButton}
+          style={styles.viewAllButton}
           textStyle={styles.viewAllText}
         />
       )}
