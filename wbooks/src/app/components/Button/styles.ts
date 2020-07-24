@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { grey, ligthBlueButton, white } from '../../../constants/colors';
+import { grey, darkLightBlue, white } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   button: {
@@ -10,12 +10,12 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: ligthBlueButton,
+    borderColor: darkLightBlue,
     backgroundColor: white
   },
   fillButton: {
-    borderColor: ligthBlueButton,
-    backgroundColor: ligthBlueButton
+    borderColor: darkLightBlue,
+    backgroundColor: darkLightBlue
   },
   disabledButton: {
     backgroundColor: grey,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    color: ligthBlueButton,
+    color: darkLightBlue,
     fontSize: 18
   },
   fillButtonTitle: {

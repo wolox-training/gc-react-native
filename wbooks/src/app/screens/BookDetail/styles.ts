@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { lightBlue, white, dark, available, notAvailable } from '../../../constants/colors';
+import { lightBlue, white, dark, green, red } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   background: {
@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
     fontWeight: 'bold',
-    color: notAvailable
+    color: red
   },
   available: {
-    color: available
+    color: green
   },
   info: {
     color: dark,
