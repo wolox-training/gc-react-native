@@ -1,3 +1,40 @@
+import maleUser from '../app/components/Comment/assets/img_user1.png';
+import femaleUser from '../app/components/Comment/assets/img_user2.png';
+
+export const BOOKS_COMMENTS = [
+  {
+    id: '1',
+    name: 'John Appleseed',
+    comment:
+      "It was great to see you again earlier. Let's definitely get that coffe It was great to see you earlier.",
+    img: maleUser
+  },
+  {
+    id: '2',
+    name: 'Susan Collins',
+    comment: "Let's definitely get that coffe It was great to see you earlier.",
+    img: femaleUser
+  },
+  {
+    id: '3',
+    name: 'Emilda Collins',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    img: femaleUser
+  },
+  {
+    id: '4',
+    name: 'Jose Collins',
+    comment: 'Sed porttitor, arcu ut elementum cursus, diam.',
+    img: maleUser
+  },
+  {
+    id: '5',
+    name: 'Juan Collins',
+    comment: 'Lorem ipsum dolor sit amet. Sed porttitor, arcu ut elementum cursus, diam.',
+    img: maleUser
+  }
+];
+
 export const BOOKS_DATA = [
   {
     id: '1',
@@ -7,7 +44,8 @@ export const BOOKS_DATA = [
     publisher: 'Butterworth-Heinemann',
     year: '1968',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg',
-    available: false
+    available: false,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '2',
@@ -17,7 +55,8 @@ export const BOOKS_DATA = [
     publisher: 'Pocket Books',
     year: '1989',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg',
-    available: true
+    available: true,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '3',
@@ -27,7 +66,8 @@ export const BOOKS_DATA = [
     publisher: 'Little, Brown',
     year: '1985',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg',
-    available: false
+    available: false,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '4',
@@ -37,7 +77,8 @@ export const BOOKS_DATA = [
     publisher: 'Pocket Books',
     year: '1989',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg',
-    available: true
+    available: true,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '5',
@@ -47,7 +88,8 @@ export const BOOKS_DATA = [
     publisher: 'Pocket Books',
     year: '1989',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg',
-    available: false
+    available: false,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '6',
@@ -57,7 +99,8 @@ export const BOOKS_DATA = [
     publisher: 'Riverhead Books',
     year: '2015',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/content.jpeg',
-    available: true
+    available: true,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '7',
@@ -67,7 +110,8 @@ export const BOOKS_DATA = [
     publisher: 'Scribner',
     year: '2014',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/content.jpeg',
-    available: false
+    available: false,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '8',
@@ -78,7 +122,8 @@ export const BOOKS_DATA = [
     year: '2003',
     img:
       'http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg',
-    available: true
+    available: true,
+    comments: BOOKS_COMMENTS
   },
   {
     id: '9',
@@ -88,6 +133,7 @@ export const BOOKS_DATA = [
     publisher: 'Crown Publishing Group',
     year: '2011',
     img: 'http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg',
-    available: true
+    available: true,
+    comments: BOOKS_COMMENTS
   }
 ];

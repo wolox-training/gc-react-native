@@ -8,14 +8,16 @@ interface ButtonProps {
   fill?: boolean;
   onPress?: any;
   disabled?: boolean;
+  buttonStyle?: any;
+  textStyle?: any;
 }
 
-const Button = ({ text, fill, onPress, disabled }: ButtonProps) => (
+const Button = ({ text, fill, onPress, disabled, buttonStyle, textStyle }: ButtonProps) => (
   <TouchableOpacity
-    style={[styles.button, fill && styles.fillButton, disabled && styles.disabledButton]}
+    style={[styles.button, fill && styles.fillButton, disabled && styles.disabledButton, buttonStyle]}
     disabled={disabled}
     onPress={onPress}>
-    <Text style={[styles.title, fill && styles.fillButtonTitle]}>{text}</Text>
+    <Text style={[styles.title, fill && styles.fillButtonTitle, textStyle]}>{text}</Text>
   </TouchableOpacity>
 );
 

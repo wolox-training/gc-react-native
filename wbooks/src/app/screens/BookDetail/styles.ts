@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     height: 280,
     paddingHorizontal: 30,
     paddingVertical: 15,
-    width: '100%'
+    width: '100%',
+    marginBottom: 15
   },
   image: {
     height: 120,
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flexDirection: 'row',
-    marginBottom: 20
+    marginBottom: 15
   },
   infoContainer: {
     marginLeft: 20
