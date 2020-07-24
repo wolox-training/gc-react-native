@@ -8,8 +8,8 @@ interface Props {
   fill?: boolean;
   onPress?: () => void;
   disabled?: boolean;
-  buttonStyle?: any;
-  textStyle?: any;
+  buttonStyle?: object;
+  textStyle?: object;
 }
 
 const Button = ({ text, fill, onPress, disabled, buttonStyle, textStyle }: Props) => (

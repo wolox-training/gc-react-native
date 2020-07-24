@@ -13,9 +13,9 @@ const CommentList = ({ comments }: any) => {
     setNumber(allCommentsAmount);
   };
 
-  const renderItem = ({ item }: { item: any }) => {
-    return <Comment key={item.id} name={item.name} img={item.img} comment={item.comment} />;
-  };
+  const renderItem = ({ item }: { item: any }) => (
+    <Comment key={item.id} name={item.name} img={item.img} comment={item.comment} />
+  );
   const renderSeparator = () => <View style={styles.cardSeparator} />;
 
   return (
