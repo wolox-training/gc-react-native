@@ -10,7 +10,9 @@ const BookCard = ({ book, onClick }: BookProps) => {
       <View style={styles.card}>
         <Image style={styles.cardImage} source={{ uri: book.img }} />
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>{book.title}</Text>
+          <Text numberOfLines={1} style={styles.title}>
+            {book.title}
+          </Text>
           <Text style={styles.subtitle}>{book.author}</Text>
         </View>
       </View>

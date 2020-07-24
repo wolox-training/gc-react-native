@@ -6,7 +6,8 @@ export const BOOKS_DATA = [
     genre: 'Short story',
     publisher: 'Butterworth-Heinemann',
     year: '1968',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg',
+    available: false
   },
   {
     id: '2',
@@ -15,7 +16,8 @@ export const BOOKS_DATA = [
     genre: 'other',
     publisher: 'Pocket Books',
     year: '1989',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg',
+    available: true
   },
   {
     id: '3',
@@ -24,7 +26,8 @@ export const BOOKS_DATA = [
     genre: 'suspense',
     publisher: 'Little, Brown',
     year: '1985',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg',
+    available: false
   },
   {
     id: '4',
@@ -33,7 +36,8 @@ export const BOOKS_DATA = [
     genre: 'suspense',
     publisher: 'Pocket Books',
     year: '1989',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg',
+    available: true
   },
   {
     id: '5',
@@ -42,7 +46,8 @@ export const BOOKS_DATA = [
     genre: 'suspense',
     publisher: 'Pocket Books',
     year: '1989',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg',
+    available: false
   },
   {
     id: '6',
@@ -51,7 +56,8 @@ export const BOOKS_DATA = [
     genre: 'suspense',
     publisher: 'Riverhead Books',
     year: '2015',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/content.jpeg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/content.jpeg',
+    available: true
   },
   {
     id: '7',
@@ -60,7 +66,8 @@ export const BOOKS_DATA = [
     genre: 'suspense',
     publisher: 'Scribner',
     year: '2014',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/content.jpeg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/content.jpeg',
+    available: false
   },
   {
     id: '8',
@@ -70,7 +77,8 @@ export const BOOKS_DATA = [
     publisher: 'Ballantine Books',
     year: '2003',
     img:
-      'http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg'
+      'http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg',
+    available: true
   },
   {
     id: '9',
@@ -79,6 +87,7 @@ export const BOOKS_DATA = [
     genre: 'fiction',
     publisher: 'Crown Publishing Group',
     year: '2011',
-    img: 'http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg'
+    img: 'http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg',
+    available: true
   }
 ];
