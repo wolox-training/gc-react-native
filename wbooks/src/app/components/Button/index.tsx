@@ -3,7 +3,7 @@ import { Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
-interface ButtonProps {
+interface Props {
   text: string;
   fill?: boolean;
   onPress?: () => void;
@@ -12,7 +12,7 @@ interface ButtonProps {
   textStyle?: any;
 }
 
-const Button = ({ text, fill, onPress, disabled, buttonStyle, textStyle }: ButtonProps) => (
+const Button = ({ text, fill, onPress, disabled, buttonStyle, textStyle }: Props) => (
   <TouchableOpacity
     style={[styles.button, fill && styles.fillButton, disabled && styles.disabledButton, buttonStyle]}
     disabled={disabled}
