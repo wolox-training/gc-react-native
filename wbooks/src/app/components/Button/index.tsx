@@ -3,14 +3,14 @@ import { Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
-interface ButtonProps {
+interface Props {
   text: string;
   fill?: boolean;
   onPress?: () => void;
   disabled?: boolean;
 }
 
-const Button = ({ text, fill, onPress, disabled }: ButtonProps) => (
+const Button = ({ text, fill, onPress, disabled }: Props) => (
   <TouchableOpacity
     style={[styles.button, fill && styles.fillButton, disabled && styles.disabledButton]}
     disabled={disabled}
