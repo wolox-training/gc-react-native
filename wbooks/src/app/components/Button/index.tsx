@@ -6,7 +6,7 @@ import styles from './styles';
 interface ButtonProps {
   text: string;
   fill?: boolean;
-  onPress?: any;
+  onPress?: () => void;
   disabled?: boolean;
 }
 
