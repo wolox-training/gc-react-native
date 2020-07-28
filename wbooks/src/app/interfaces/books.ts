@@ -1,3 +1,5 @@
+import { CommentsProps } from './comments';
+
 export interface Book {
   id?: string;
   author: string;
@@ -7,7 +9,7 @@ export interface Book {
   publisher?: string;
   year?: string;
   available?: boolean;
-  comments?: any;
+  comments?: CommentsProps[];
 }
 
 export interface BookProps {

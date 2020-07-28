@@ -33,7 +33,7 @@ const BookDetail = ({ route }: Route) => {
         <Button text={'RENT'} fill={true} disabled={!available} />
       </View>
       <View style={styles.container}>
-        <CommentList comments={comments} />
+        <CommentList comments={comments!} />
       </View>
     </View>
   );
