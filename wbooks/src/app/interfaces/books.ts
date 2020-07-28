@@ -9,7 +9,7 @@ export interface Book {
   publisher?: string;
   year?: string;
   available?: boolean;
-  comments?: CommentsProps[];
+  comments: CommentsProps[];
 }
 
 export interface BookProps {
