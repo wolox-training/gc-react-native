@@ -1,5 +1,5 @@
 export interface CommentsProps {
-  id: string;
+  id?: string;
   name: string;
   img: any;
   comment: string;

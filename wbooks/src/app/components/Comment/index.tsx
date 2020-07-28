@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
+import { CommentsProps } from '../../interfaces/comments';
+
 import styles from './styles';
 
-const Comment = ({ name, img, comment }: any) => (
+const Comment = ({ name, img, comment }: CommentsProps) => (
   <View style={styles.card}>
     <Image style={styles.image} source={img} />
     <View style={styles.infoContainer}>
