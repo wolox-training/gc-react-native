@@ -4,7 +4,7 @@ import { white } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 26,
+    fontSize: 24,
     color: white,
     flex: 1
   },
@@ -16,12 +16,6 @@ const styles = StyleSheet.create({
     height: 110,
     flexDirection: 'row',
     alignItems: 'center'
-  },
-  buttonContainer: {
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center'
   }
 });
 

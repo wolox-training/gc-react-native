@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Text, View, Platform } from 'react-native';
+import { ImageBackground, Text, Platform } from 'react-native';
 
 import BackButton from '../BackButton';
 
@@ -13,11 +13,8 @@ interface Props {
 
 const Header = ({ navigation, title }: Props) => (
   <ImageBackground style={styles.header} source={background}>
-    <View style={styles.buttonContainer}>
-      <BackButton navigation={navigation} />
-    </View>
+    <BackButton navigation={navigation} />
     <Text style={[styles.title, Platform.OS === 'ios' && styles.centerTitle]}>{title}</Text>
-    <View style={styles.buttonContainer} />
   </ImageBackground>
 );
 

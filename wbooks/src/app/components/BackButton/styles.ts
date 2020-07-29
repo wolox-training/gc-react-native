@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  button: {
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center'
+  imgage: {
+    marginLeft: 15,
+    height: 25,
+    width: 25
   }
 });
 
