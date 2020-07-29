@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { lightBlue, white, dark, available, notAvailable } from '../../../constants/colors';
+import { lightBlue, white, dark, green, red } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   background: {
@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     height: 280,
     paddingHorizontal: 30,
     paddingVertical: 15,
-    width: '100%'
+    width: '100%',
+    marginBottom: 15
   },
   image: {
     height: 120,
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flexDirection: 'row',
-    marginBottom: 20
+    marginBottom: 15
   },
   infoContainer: {
     marginLeft: 20
@@ -35,10 +36,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
     fontWeight: 'bold',
-    color: notAvailable
+    color: red
   },
   available: {
-    color: available
+    color: green
   },
   info: {
     color: dark,

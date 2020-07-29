@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 
 import Button from '../../components/Button';
+import CommentList from '../../components/CommentList';
 import defaultImage from '../../components/BookCard/assets/img_book1.png';
 import { Route } from '../../interfaces/route';
 import { Book } from '../../interfaces/books';
@@ -9,7 +10,7 @@ import { Book } from '../../interfaces/books';
 import styles from './styles';
 
 const BookDetail = ({ route }: Route) => {
-  const { title, author, img, year, genre, available }: Book = route.params;
+  const { title, author, img, year, genre, available, comments }: Book = route.params;
   const image = img ? { uri: img } : defaultImage;
   return (
     <View style={styles.background}>
@@ -30,6 +31,9 @@ const BookDetail = ({ route }: Route) => {
         </View>
         <Button text={'ADD TO WISHLIST'} />
         <Button text={'RENT'} fill={true} disabled={!available} />
+      </View>
+      <View style={styles.container}>
+        <CommentList comments={comments!} />
       </View>
     </View>
   );
