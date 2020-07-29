@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, FlatList } from 'react-native';
 
 import Comment from '../Comment';
-import Button from '../../components/Button';
+import Button from '../Button';
 import { CommentsData, CommentsProps } from '../../interfaces/comments';
 
 import styles from './styles';
