@@ -8,7 +8,7 @@ import BookDetail from '../../screens/BookDetail';
 import Routes from '../../../constants/routes';
 import Titles from '../../../constants/titles';
 import Header from '../Header';
-import TabBarOptions from '../TabBar';
+import TabBarIcons from '../TabBar';
 import { tabNavigatorConfig } from '../../../config/navigation';
 
 const BookListScreen = () => {
@@ -31,7 +31,7 @@ const AppNavigation = () => {
   const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
-      <Tab.Navigator tabBarOptions={tabNavigatorConfig} screenOptions={TabBarOptions}>
+      <Tab.Navigator tabBarOptions={tabNavigatorConfig} screenOptions={TabBarIcons}>
         <Tab.Screen name={Routes.BookList} component={BookListScreen} />
         <Tab.Screen name={Routes.Wish} component={BookListScreen} />
       </Tab.Navigator>

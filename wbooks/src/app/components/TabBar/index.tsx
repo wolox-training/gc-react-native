@@ -10,11 +10,11 @@ interface Props {
   size: number;
 }
 
-const TabBarIcon = ({ route }: Route) => ({
+const TabBarIcons = ({ route }: Route) => ({
   tabBarIcon: ({ focused, size }: Props) => {
     const icon = tabsItems[route.name][focused ? ACTIVE_ICON : INACTIVE_ICON];
     return <Image source={icon} style={{ height: size, width: size }} />;
   }
 });
 
-export default TabBarIcon;
+export default TabBarIcons;
