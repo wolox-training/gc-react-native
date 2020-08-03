@@ -6,26 +6,26 @@ import Button from '../Button';
 import { CommentsData, CommentsProps } from '../../interfaces/comments';
 
 import styles from './styles';
+import { defaultCommentsToView } from './constants';
 
 const CommentList = ({ comments }: CommentsData) => {
   const allCommentsAmount = comments.length;
-  const [commentsToView, setNumber] = useState(2);
+  const [commentsToView, setCommentsToView] = useState(defaultCommentsToView);
   const viewAll = () => {
-    setNumber(allCommentsAmount);
+    setCommentsToView(allCommentsAmount);
   };
 
-  const renderItem = ({ id, name, img, comment }: CommentsProps, index: number) =>
-    index < commentsToView ? (
-      <View key={id}>
-        <Comment key={id} name={name} img={img} comment={comment} />
-        <View style={styles.cardSeparator} />
-      </View>
-    ) : null;
+  const renderItem = ({ id, name, img, comment }: CommentsProps) => (
+    <View key={id}>
+      <Comment key={id} name={name} img={img} comment={comment} />
+      <View style={styles.cardSeparator} />
+    </View>
+  );
 
   return (
     <View>
-      {comments.map(renderItem)}
-      {commentsToView === 2 && (
+      {comments.slice(0, commentsToView).map(renderItem)}
+      {commentsToView === defaultCommentsToView && (
         <Button
           text={'View all'}
           onPress={viewAll}
