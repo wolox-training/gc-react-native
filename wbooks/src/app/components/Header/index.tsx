@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageBackground, Text, Platform } from 'react-native';
+import { NavigationStackProp } from 'react-navigation-stack';
 
 import BackButton from '../BackButton';
 
@@ -8,7 +9,7 @@ import styles from './styles';
 
 interface Props {
   title: string;
-  navigation: any;
+  navigation: NavigationStackProp;
 }
 
 const Header = ({ navigation, title }: Props) => (
