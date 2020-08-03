@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, FlatList } from 'react-native';
+import { View } from 'react-native';
 
 import Comment from '../Comment';
 import Button from '../Button';
@@ -9,26 +9,23 @@ import styles from './styles';
 
 const CommentList = ({ comments }: CommentsData) => {
   const allCommentsAmount = comments.length;
-  const [initialAmount, setNumber] = useState(2);
+  const [commentsToView, setNumber] = useState(2);
   const viewAll = () => {
     setNumber(allCommentsAmount);
   };
 
-  const renderItem = ({ item }: { item: CommentsProps }) => (
-    <Comment key={item.id} name={item.name} img={item.img} comment={item.comment} />
-  );
-  const renderSeparator = () => <View style={styles.cardSeparator} />;
+  const renderItem = ({ id, name, img, comment }: CommentsProps, index: number) =>
+    index < commentsToView ? (
+      <View key={id}>
+        <Comment key={id} name={name} img={img} comment={comment} />
+        <View style={styles.cardSeparator} />
+      </View>
+    ) : null;
 
   return (
     <View>
-      <FlatList
-        data={comments}
-        renderItem={renderItem}
-        ItemSeparatorComponent={renderSeparator}
-        initialNumToRender={initialAmount}
-        windowSize={1}
-      />
-      {initialAmount === 2 && (
+      {comments.map(renderItem)}
+      {commentsToView === 2 && (
         <Button
           text={'View all'}
           onPress={viewAll}

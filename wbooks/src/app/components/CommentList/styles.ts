@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     height: 20
   },
   viewAllButton: {
-    borderWidth: 0
+    borderWidth: 0,
+    marginTop: 0
   },
   viewAllText: {
     fontWeight: 'normal'
