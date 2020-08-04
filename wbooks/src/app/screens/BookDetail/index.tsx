@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { ScrollView, View, Text, Image } from 'react-native';
 
 import Button from '../../components/Button';
 import CommentList from '../../components/CommentList';
@@ -13,7 +13,7 @@ const BookDetail = ({ route }: Route) => {
   const { title, author, img, year, genre, available, comments }: Book = route.params;
   const image = img ? { uri: img } : defaultImage;
   return (
-    <View style={styles.background}>
+    <ScrollView style={styles.background}>
       <View style={styles.container}>
         <View style={styles.card}>
           <Image style={styles.image} source={image} />
@@ -35,7 +35,7 @@ const BookDetail = ({ route }: Route) => {
       <View style={styles.container}>
         <CommentList comments={comments} />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

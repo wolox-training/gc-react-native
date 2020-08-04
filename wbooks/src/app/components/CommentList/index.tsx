@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
-import { View, FlatList } from 'react-native';
+import { View } from 'react-native';
 
 import Comment from '../Comment';
 import Button from '../Button';
 import { CommentsData, CommentsProps } from '../../interfaces/comments';
 
 import styles from './styles';
+import { defaultCommentsToView } from './constants';
 
 const CommentList = ({ comments }: CommentsData) => {
   const allCommentsAmount = comments.length;
-  const [initialAmount, setNumber] = useState(2);
+  const [commentsToView, setCommentsToView] = useState(defaultCommentsToView);
   const viewAll = () => {
-    setNumber(allCommentsAmount);
+    setCommentsToView(allCommentsAmount);
   };
 
-  const renderItem = ({ item }: { item: CommentsProps }) => (
-    <Comment key={item.id} name={item.name} img={item.img} comment={item.comment} />
+  const renderItem = ({ id, name, img, comment }: CommentsProps) => (
+    <View key={id}>
+      <Comment key={id} name={name} img={img} comment={comment} />
+      <View style={styles.cardSeparator} />
+    </View>
   );
-  const renderSeparator = () => <View style={styles.cardSeparator} />;
 
   return (
     <View>
-      <FlatList
-        data={comments}
-        renderItem={renderItem}
-        ItemSeparatorComponent={renderSeparator}
-        initialNumToRender={initialAmount}
-        windowSize={1}
-      />
-      {initialAmount === 2 && (
+      {comments.slice(0, commentsToView).map(renderItem)}
+      {commentsToView === defaultCommentsToView && (
         <Button
           text={'View all'}
           onPress={viewAll}
