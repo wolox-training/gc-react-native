@@ -11,19 +11,19 @@ const reducer = (state = initialState, action) => {
     case actions.GET_BOOKS:
       return {
         ...state,
-        loading: true
+        booksLoading: true
       };
     case actions.GET_BOOKS_SUCCESS:
       return {
         ...state,
-        loading: false,
+        booksLoading: false,
         books: action.payload
       };
     case actions.GET_BOOKS_FAILURE:
       return {
         ...state,
-        loading: false,
-        error: 'Error'
+        booksLoading: false,
+        booksError: 'Error'
       };
     default:
       return state;
