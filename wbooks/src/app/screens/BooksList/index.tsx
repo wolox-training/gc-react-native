@@ -12,7 +12,7 @@ import styles from './styles';
 
 const BooksList = ({ navigation }: any) => {
   const dispatch = useDispatch();
-  const books = useSelector((state: AppState) => state.books.books, shallowEqual);
+  const books = useSelector((state: AppState) => state.books.books.page, shallowEqual);
   useEffect(() => {
     dispatch(actionCreator.getBooks());
   }, [dispatch]);
