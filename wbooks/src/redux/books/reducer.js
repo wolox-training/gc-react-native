@@ -2,8 +2,8 @@ import { actions } from './actions';
 
 const initialState = {
   books: [],
-  loading: false,
-  error: ''
+  booksLoading: false,
+  booksError: ''
 };
 
 const reducer = (state = initialState, action) => {

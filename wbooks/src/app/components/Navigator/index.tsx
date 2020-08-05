@@ -2,7 +2,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Provider } from 'react-redux';
 
 import BooksList from '../../screens/BooksList';
 import BookDetail from '../../screens/BookDetail';
@@ -11,7 +10,6 @@ import Titles from '../../../constants/titles';
 import Header from '../Header';
 import TabBarIcons from '../TabBar';
 import { tabNavigatorConfig } from '../../../config/navigation';
-import store from '../../../redux/store';
 
 const BookListScreen = () => {
   const Stack = createStackNavigator();
@@ -32,14 +30,12 @@ const BookListScreen = () => {
 const AppNavigation = () => {
   const Tab = createBottomTabNavigator();
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Tab.Navigator tabBarOptions={tabNavigatorConfig} screenOptions={TabBarIcons}>
-          <Tab.Screen name={Routes.BookList} component={BookListScreen} />
-          <Tab.Screen name={Routes.Wish} component={BookListScreen} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </Provider>
+    <NavigationContainer>
+      <Tab.Navigator tabBarOptions={tabNavigatorConfig} screenOptions={TabBarIcons}>
+        <Tab.Screen name={Routes.BookList} component={BookListScreen} />
+        <Tab.Screen name={Routes.Wish} component={BookListScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 

@@ -12,12 +12,10 @@ export interface Book {
   comments: CommentsProps[];
 }
 
-export interface BookList {
-  books: Book[];
-}
-
 export interface BooksState {
-  books: BookList;
+  books: Book[];
+  booksLoading: boolean;
+  booksError: string;
 }
 
 export interface BookProps {
