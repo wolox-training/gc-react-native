@@ -9,13 +9,17 @@
  */
 
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import AppNavigation from './src/app/components/Navigator';
+import store from './src/redux/store';
 
 const App = () => {
   return (
     <>
-      <AppNavigation />
+      <Provider store={store}>
+        <AppNavigation />
+      </Provider>
     </>
   );
 };

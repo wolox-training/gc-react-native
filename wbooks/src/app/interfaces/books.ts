@@ -12,6 +12,12 @@ export interface Book {
   comments: CommentsProps[];
 }
 
+export interface BooksState {
+  books: Book[];
+  booksLoading: boolean;
+  booksError: string;
+}
+
 export interface BookProps {
   book: Book;
   onClick: () => void;
