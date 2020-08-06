@@ -22,7 +22,7 @@ const CommentList = ({ comments }: CommentsData) => {
     </View>
   );
 
-  return allCommentsAmount < 0 ? (
+  return allCommentsAmount > 0 ? (
     <View>
       {comments.slice(0, commentsToView).map(renderItem)}
       {commentsToView === defaultCommentsToView && (

@@ -1,5 +1,3 @@
 import api from '../config/api';
 
-export const books = {
-  getBookList: () => api.get('/books')
-};
+export const getBookList = () => api.get('/books');

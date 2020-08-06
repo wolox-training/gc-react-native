@@ -1,4 +1,4 @@
-import { books } from '../../services/BookService';
+import { getBookList } from '../../services/BookService';
 
 export const actions = {
   GET_BOOKS: 'GET_BOOKS',
@@ -9,7 +9,7 @@ export const actions = {
 export const actionCreator = {
   getBooks: () => async (dispatch) => {
     dispatch({ type: actions.GET_BOOKS });
-    const response = await books.getBookList();
+    const response = await getBookList();
     if (response.ok) {
       dispatch({
         type: actions.GET_BOOKS_SUCCESS,
