@@ -11,7 +11,8 @@ const reducer = (state = initialState, action) => {
     case actions.GET_BOOKS:
       return {
         ...state,
-        booksLoading: true
+        booksLoading: true,
+        booksError: ''
       };
     case actions.GET_BOOKS_SUCCESS:
       return {
