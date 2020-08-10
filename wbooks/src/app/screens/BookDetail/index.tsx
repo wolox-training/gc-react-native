@@ -10,13 +10,12 @@ import { Book } from '../../interfaces/books';
 import styles from './styles';
 
 const BookDetail = ({ route }: Route) => {
-  const { title, author, img, year, genre, available, comments }: Book = route.params;
-  const image = img ? { uri: img } : defaultImage;
+  const { title, author, year, genre, available, comments }: Book = route.params;
   return (
     <ScrollView style={styles.background}>
       <View style={styles.container}>
         <View style={styles.card}>
-          <Image style={styles.image} source={image} />
+          <Image style={styles.image} source={defaultImage} />
           <View style={styles.infoContainer}>
             <Text numberOfLines={1} style={styles.title}>
               {title}

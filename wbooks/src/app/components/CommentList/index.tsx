@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 import Comment from '../Comment';
 import Button from '../Button';
@@ -9,7 +9,7 @@ import styles from './styles';
 import { defaultCommentsToView } from './constants';
 
 const CommentList = ({ comments }: CommentsData) => {
-  const allCommentsAmount = comments.length;
+  const allCommentsAmount = comments ? comments.length : 0;
   const [commentsToView, setCommentsToView] = useState(defaultCommentsToView);
   const viewAll = () => {
     setCommentsToView(allCommentsAmount);
@@ -22,7 +22,7 @@ const CommentList = ({ comments }: CommentsData) => {
     </View>
   );
 
-  return (
+  return allCommentsAmount > 0 ? (
     <View>
       {comments.slice(0, commentsToView).map(renderItem)}
       {commentsToView === defaultCommentsToView && (
@@ -34,6 +34,8 @@ const CommentList = ({ comments }: CommentsData) => {
         />
       )}
     </View>
+  ) : (
+    <Text>No comments about this book.</Text>
   );
 };
 

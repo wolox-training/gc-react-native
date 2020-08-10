@@ -1,19 +1,31 @@
 import { CommentsProps } from './comments';
 
 export interface Book {
-  id?: string;
+  id: string;
   author: string;
   title: string;
-  img: string;
-  genre?: string;
-  publisher?: string;
-  year?: string;
+  image: string;
+  editor: string;
+  year: string;
+  genre: string;
+  createAt: string;
+  updateAt: string;
   available?: boolean;
   comments: CommentsProps[];
+  rents: any;
+}
+
+export interface BooksResponse {
+  page: Book[];
+  count: number;
+  totalPages: number;
+  totalCount: number;
+  currentPage: number;
+  nextPage: number;
 }
 
 export interface BooksState {
-  books: Book[];
+  books: BooksResponse;
   booksLoading: boolean;
   booksError: string;
 }
