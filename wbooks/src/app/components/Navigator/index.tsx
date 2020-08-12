@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BooksList from '../../screens/BooksList';
 import BookDetail from '../../screens/BookDetail';
 import Login from '../../screens/Login';
+import WishList from '../../screens/WishList';
 import Routes from '../../../constants/routes';
 import Titles from '../../../constants/titles';
 import Header from '../Header';
@@ -16,7 +17,13 @@ const Stack = createStackNavigator();
 
 const BookListScreen = () => (
   <Stack.Navigator>
-    <Stack.Screen name={Routes.BookList} component={BooksList} />
+    <Stack.Screen
+      name={Routes.BookList}
+      component={BooksList}
+      options={({ navigation }) => ({
+        header: () => <Header navigation={navigation} title={Titles.BookList} />
+      })}
+    />
     <Stack.Screen
       name={Routes.BookDetail}
       component={BookDetail}
@@ -30,18 +37,21 @@ const BookListScreen = () => (
 const HomeNavigation = () => {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator tabBarOptions={tabNavigatorConfig} screenOptions={TabBarIcons}>
+    <Tab.Navigator
+      tabBarOptions={tabNavigatorConfig}
+      screenOptions={TabBarIcons}
+      initialRouteName={Routes.BookList}>
       <Tab.Screen name={Routes.BookList} component={BookListScreen} />
-      <Tab.Screen name={Routes.Wish} component={BookListScreen} />
+      <Tab.Screen name={Routes.Wish} component={WishList} />
     </Tab.Navigator>
   );
 };
 
 const AppNavigation = () => (
   <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name={Routes.Login} component={Login} options={{ headerShown: false }} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name={Routes.BookList} component={HomeNavigation} />
+      <Stack.Screen name={Routes.Login} component={Login} />
     </Stack.Navigator>
   </NavigationContainer>
 );

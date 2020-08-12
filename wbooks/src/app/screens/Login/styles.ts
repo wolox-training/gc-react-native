@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { white, dark, transparent } from '../../../constants/colors';
+import { white, dark, transparent, red } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: white
+  },
+  error: {
+    color: red
   }
 });
 

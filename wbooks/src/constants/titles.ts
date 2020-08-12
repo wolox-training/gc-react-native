@@ -1,6 +1,6 @@
 const Titles = {
   BookDetail: 'BOOK DETAIL',
-  BookList: 'Library',
+  BookList: 'LIBRARY',
   WishList: 'Wishlist'
 };
 
