@@ -3,6 +3,7 @@ import { ImageBackground, Text, Platform } from 'react-native';
 
 import BackButton from '../BackButton';
 import { Navigation } from '../../interfaces/navigation';
+import { ios } from '../../../constants/platforms';
 
 import background from './assets/bcNavBar.png';
 import styles from './styles';
@@ -17,7 +18,7 @@ const Header = ({ navigation, title }: Props) => (
     <Text
       style={[
         styles.title,
-        Platform.OS === 'ios' && styles.centerTitle,
+        Platform.OS === ios && styles.centerTitle,
         !navigation.canGoBack() && styles.leftSpace
       ]}>
       {title}
