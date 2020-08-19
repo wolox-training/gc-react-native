@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useSelector } from 'react-redux';
 
 import BooksList from '../../screens/BooksList';
 import BookDetail from '../../screens/BookDetail';
@@ -12,6 +13,7 @@ import Titles from '../../../constants/titles';
 import Header from '../Header';
 import TabBarIcons from '../TabBar';
 import { tabNavigatorConfig } from '../../../config/navigation';
+import { AppState } from '../../interfaces/appState';
 
 const Stack = createStackNavigator();
 
@@ -47,13 +49,19 @@ const HomeNavigation = () => {
   );
 };
 
-const AppNavigation = () => (
-  <NavigationContainer>
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={Routes.BookList} component={HomeNavigation} />
-      <Stack.Screen name={Routes.Login} component={Login} />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
+const AppNavigation = () => {
+  const { user } = useSelector((state: AppState) => state.authorization);
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {user?.data ? (
+          <Stack.Screen name={Routes.BookList} component={HomeNavigation} />
+        ) : (
+          <Stack.Screen name={Routes.Login} component={Login} />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default AppNavigation;
