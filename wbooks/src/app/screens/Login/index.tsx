@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  ImageBackground,
-  View,
-  Text,
-  Image,
-  TextInput,
-  NativeSyntheticEvent,
-  TextInputChangeEventData
-} from 'react-native';
+import { ImageBackground, View, Text, Image, TextInput } from 'react-native';
 
 import Button from '../../components/Button';
 import { AppState } from '../../interfaces/appState';
@@ -22,26 +14,25 @@ import wbooks from './assets/wbooks.png';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState<string>();
-  const [passwordError, setPasswordError] = useState<string>();
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const dispatch = useDispatch();
 
   const signIn = () => {
-    setEmailError(validateEmail(email));
-    setPasswordError(validatePassword(password));
     dispatch(actionCreators.login({ email, password }));
   };
 
+  const disabledButton = Boolean(!email || !password || emailError || passwordError);
   const { userError } = useSelector((state: AppState) => state.authorization);
 
-  const handleEmailInput = (value: NativeSyntheticEvent<TextInputChangeEventData>) => {
-    setEmail(value.nativeEvent.text);
-    setEmailError('');
+  const handleEmailInput = (inputValue: string) => {
+    setEmail(inputValue);
+    setEmailError(validateEmail(inputValue));
   };
 
-  const handlePasswordInput = (value: NativeSyntheticEvent<TextInputChangeEventData>) => {
-    setPassword(value.nativeEvent.text);
-    setPasswordError('');
+  const handlePasswordInput = (inputValue: string) => {
+    setPassword(inputValue);
+    setPasswordError(validatePassword(inputValue));
   };
 
   return (
@@ -52,7 +43,7 @@ const Login = () => {
           <TextInput
             style={styles.input}
             placeholder={'Usuario'}
-            onChange={handleEmailInput}
+            onChangeText={handleEmailInput}
             textContentType="emailAddress"
             keyboardType="email-address"
           />
@@ -62,10 +53,16 @@ const Login = () => {
             placeholder={'Contraseña'}
             secureTextEntry={true}
             textContentType={'password'}
-            onChange={handlePasswordInput}
+            onChangeText={handlePasswordInput}
           />
           <Text style={styles.error}>{!!passwordError && passwordError}</Text>
-          <Button text={'Ingresar'} style={styles.button} textStyle={styles.textStyle} onPress={signIn} />
+          <Button
+            text={'Ingresar'}
+            style={styles.button}
+            textStyle={styles.textStyle}
+            onPress={signIn}
+            disabled={disabledButton}
+          />
           <Text style={styles.error}>{!!userError?.errors && userError?.errors}</Text>
         </View>
         <Text>Designd, developed and used by woloxers</Text>
