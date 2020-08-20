@@ -1,7 +1,7 @@
 import { actions } from './actions';
 
 const initialState = {
-  user: [],
+  user: null,
   userLoading: false,
   userError: {}
 };

@@ -51,7 +51,7 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={headerConfig}>
-        {user && !Array.isArray(user) ? (
+        {user ? (
           <Stack.Screen name={Routes.BookList} component={HomeNavigation} />
         ) : (
           <Stack.Screen name={Routes.Login} component={Login} />
