@@ -18,9 +18,7 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('');
   const dispatch = useDispatch();
 
-  const signIn = () => {
-    dispatch(actionCreators.login({ email, password }));
-  };
+  const signIn = () => dispatch(actionCreators.login({ email, password }));
 
   const disabledButton = Boolean(!email || !password || emailError || passwordError);
   const { userError } = useSelector((state: AppState) => state.authorization);
