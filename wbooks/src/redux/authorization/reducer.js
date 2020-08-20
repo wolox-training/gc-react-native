@@ -3,8 +3,7 @@ import { actions } from './actions';
 const initialState = {
   user: [],
   userLoading: false,
-  userError: {},
-  userStatusCode: ''
+  userError: {}
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,7 +18,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         userLoading: false,
-        user: action.payload
+        user: action.payload,
+        userError: ''
       };
     case actions.LOGIN_FAILURE:
       return {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Text, Platform } from 'react-native';
+import { ImageBackground, Text } from 'react-native';
 
 import BackButton from '../BackButton';
 import { Navigation } from '../../interfaces/navigation';
@@ -12,18 +12,14 @@ interface Props extends Navigation {
   title: string;
 }
 
-const Header = ({ navigation, title }: Props) => (
-  <ImageBackground style={styles.header} source={background}>
-    {navigation.canGoBack() && <BackButton navigation={navigation} />}
-    <Text
-      style={[
-        styles.title,
-        isIos(Platform.OS) && styles.centerTitle,
-        !navigation.canGoBack() && styles.leftSpace
-      ]}>
-      {title}
-    </Text>
-  </ImageBackground>
-);
+const Header = ({ navigation, title }: Props) => {
+  const canGoBack = navigation.canGoBack();
+  return (
+    <ImageBackground style={styles.header} source={background}>
+      {canGoBack && <BackButton navigation={navigation} />}
+      <Text style={[styles.title, isIos && styles.centerTitle, !canGoBack && styles.leftSpace]}>{title}</Text>
+    </ImageBackground>
+  );
+};
 
 export default Header;

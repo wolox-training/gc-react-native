@@ -1,8 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useSelector } from 'react-redux';
 
 import BooksList from '../../screens/BooksList';
 import BookDetail from '../../screens/BookDetail';
@@ -12,7 +12,7 @@ import Routes from '../../../constants/routes';
 import Titles from '../../../constants/titles';
 import Header from '../Header';
 import TabBarIcons from '../TabBar';
-import { tabNavigatorConfig } from '../../../config/navigation';
+import { tabNavigatorConfig, headerConfig } from '../../../config/navigation';
 import { AppState } from '../../interfaces/appState';
 
 const Stack = createStackNavigator();
@@ -39,10 +39,7 @@ const BookListScreen = () => (
 const HomeNavigation = () => {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator
-      tabBarOptions={tabNavigatorConfig}
-      screenOptions={TabBarIcons}
-      initialRouteName={Routes.BookList}>
+    <Tab.Navigator tabBarOptions={tabNavigatorConfig} screenOptions={TabBarIcons}>
       <Tab.Screen name={Routes.BookList} component={BookListScreen} />
       <Tab.Screen name={Routes.Wish} component={WishList} />
     </Tab.Navigator>
@@ -53,8 +50,8 @@ const AppNavigation = () => {
   const { user } = useSelector((state: AppState) => state.authorization);
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {user?.data ? (
+      <Stack.Navigator screenOptions={headerConfig}>
+        {user && !Array.isArray(user) ? (
           <Stack.Screen name={Routes.BookList} component={HomeNavigation} />
         ) : (
           <Stack.Screen name={Routes.Login} component={Login} />

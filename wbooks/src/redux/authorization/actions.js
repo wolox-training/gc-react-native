@@ -13,7 +13,7 @@ export const actionCreators = {
     if (response.ok) {
       dispatch({
         type: actions.LOGIN_SUCCESS,
-        payload: response.data
+        payload: response.data.data
       });
     } else {
       dispatch({

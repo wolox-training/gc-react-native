@@ -1,12 +1,8 @@
 export interface AuthorizationState {
-  user: UserData | null;
+  user: User | null;
   userLoading: boolean;
   userError: UserError | null;
   userStatusCode: number;
-}
-
-export interface UserData {
-  data: User;
 }
 
 export interface UserError {

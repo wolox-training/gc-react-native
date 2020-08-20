@@ -9,3 +9,7 @@ export const tabNavigatorConfig = {
   activeTintColor: darkLightBlue,
   inactiveTintColor: dark
 };
+
+export const headerConfig = {
+  headerShown: false
+};
