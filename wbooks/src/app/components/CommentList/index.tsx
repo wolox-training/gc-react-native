@@ -17,7 +17,7 @@ const CommentList = ({ comments }: CommentsData) => {
 
   const renderItem = ({ id, name, img, comment }: CommentsProps) => (
     <View key={id}>
-      <Comment key={id} name={name} img={img} comment={comment} />
+      <Comment name={name} img={img} comment={comment} />
       <View style={styles.cardSeparator} />
     </View>
   );

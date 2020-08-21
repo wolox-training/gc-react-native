@@ -19,12 +19,17 @@ const BooksList = ({ navigation }: any) => {
 
   const renderItem = ({ item }: { item: Book }) => {
     const handleClick = () => navigation.navigate(Routes.BookDetail, item);
-    return <BookCard key={item.id} book={item} onClick={handleClick} />;
+    return <BookCard book={item} onClick={handleClick} />;
   };
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   return (
     <View style={styles.container}>
-      <FlatList data={books} renderItem={renderItem} ItemSeparatorComponent={renderSeparator} />
+      <FlatList
+        data={books}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={renderItem}
+        ItemSeparatorComponent={renderSeparator}
+      />
     </View>
   );
 };
