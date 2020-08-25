@@ -1,9 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import STORAGE from '../../../constants/storage';
 import BooksList from '../../screens/BooksList';
 import BookDetail from '../../screens/BookDetail';
 import Login from '../../screens/Login';
@@ -14,6 +15,8 @@ import Header from '../Header';
 import TabBarIcons from '../TabBar';
 import { tabNavigatorConfig, headerConfig } from '../../../config/navigation';
 import { AppState } from '../../interfaces/appState';
+import { getAuthorizationData } from '../../../services/AuthorizationService';
+import { actionCreators } from '../../../redux/authorization/actions';
 
 const Stack = createStackNavigator();
 
@@ -47,11 +50,25 @@ const HomeNavigation = () => {
 };
 
 const AppNavigation = () => {
-  const { user } = useSelector((state: AppState) => state.authorization);
+  const { user: currentUser } = useSelector((state: AppState) => state.authorization);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getAuthorizationData().then((authorizationData) => {
+      const {
+        [STORAGE.user]: user,
+        [STORAGE.authorizationHeaders]: authorizationHeaders
+      } = authorizationData;
+
+      if (user && authorizationHeaders) {
+        dispatch(actionCreators.rehydrateAuthorization(user, authorizationHeaders));
+      }
+    });
+  }, [dispatch]);
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={headerConfig}>
-        {user ? (
+        {currentUser ? (
           <Stack.Screen name={Routes.BookList} component={HomeNavigation} />
         ) : (
           <Stack.Screen name={Routes.Login} component={Login} />

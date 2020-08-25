@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, FlatList } from 'react-native';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import BookCard from '../../components/BookCard';
 import { Book } from '../../interfaces/books';
@@ -12,10 +12,10 @@ import styles from './styles';
 
 const BooksList = ({ navigation }: any) => {
   const dispatch = useDispatch();
-  const books = useSelector((state: AppState) => state.books.books.page, shallowEqual);
+  const { books, authorization } = useSelector((state: AppState) => state);
   useEffect(() => {
-    dispatch(actionCreator.getBooks());
-  }, [dispatch]);
+    dispatch(actionCreator.getBooks(authorization.user?.uid));
+  }, [dispatch, authorization]);
 
   const renderItem = ({ item }: { item: Book }) => {
     const handleClick = () => navigation.navigate(Routes.BookDetail, item);
@@ -25,7 +25,7 @@ const BooksList = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={books}
+        data={books.books}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         ItemSeparatorComponent={renderSeparator}

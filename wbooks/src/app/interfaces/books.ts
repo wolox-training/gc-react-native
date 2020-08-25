@@ -4,7 +4,7 @@ export interface Book {
   id: string;
   author: string;
   title: string;
-  image: string;
+  image: Image;
   editor: string;
   year: string;
   genre: string;
@@ -15,17 +15,12 @@ export interface Book {
   rents: any;
 }
 
-export interface BooksResponse {
-  page: Book[];
-  count: number;
-  totalPages: number;
-  totalCount: number;
-  currentPage: number;
-  nextPage: number;
+export interface Image {
+  url: string;
 }
 
 export interface BooksState {
-  books: BooksResponse;
+  books: Book[];
   booksLoading: boolean;
   booksError: string;
 }
