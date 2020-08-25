@@ -12,10 +12,10 @@ import styles from './styles';
 
 const BooksList = ({ navigation }: any) => {
   const dispatch = useDispatch();
-  const { books, authorization } = useSelector((state: AppState) => state);
+  const { books } = useSelector((state: AppState) => state.books);
   useEffect(() => {
-    dispatch(actionCreator.getBooks(authorization.user?.uid));
-  }, [dispatch, authorization]);
+    dispatch(actionCreator.getBooks());
+  }, [dispatch]);
 
   const renderItem = ({ item }: { item: Book }) => {
     const handleClick = () => navigation.navigate(Routes.BookDetail, item);
@@ -25,7 +25,7 @@ const BooksList = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={books.books}
+        data={books}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         ItemSeparatorComponent={renderSeparator}

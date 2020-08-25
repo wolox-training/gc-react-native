@@ -7,9 +7,9 @@ export const actions = {
 };
 
 export const actionCreator = {
-  getBooks: (uid) => async (dispatch) => {
+  getBooks: () => async (dispatch) => {
     dispatch({ type: actions.GET_BOOKS });
-    const response = await getBookList({ uid });
+    const response = await getBookList();
     if (response.ok) {
       dispatch({
         type: actions.GET_BOOKS_SUCCESS,

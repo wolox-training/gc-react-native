@@ -10,7 +10,9 @@ export const setAuthorizationData = (user, token, client) => {
     [STORAGE.authorizationHeaders, JSON.stringify({ token, client })],
     [STORAGE.user, JSON.stringify(user)]
   ];
-  return AsyncStorage.multiSet(storageEntries, () => api.setHeaders({ 'access-token': token, client }));
+  return AsyncStorage.multiSet(storageEntries, () =>
+    api.setHeaders({ 'access-token': token, client, uid: user.uid })
+  );
 };
 
 export const getAuthorizationData = () =>
