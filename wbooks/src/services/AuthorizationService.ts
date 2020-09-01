@@ -1,12 +1,11 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { ApiResponse } from 'apisauce';
 
 import api from '../config/api';
 import STORAGE from '../constants/storage';
 import { User, Credentials } from '../app/interfaces/authorization';
-import { LoginResponse } from '../app/interfaces/api';
+import { PromiseLoginResponse } from '../app/interfaces/api';
 
-export const login = (credentials: Credentials): Promise<ApiResponse<LoginResponse, string>> =>
+export const login = (credentials: Credentials): PromiseLoginResponse =>
   api.post('/auth/sign_in', credentials);
 
 export const setAuthorizationData = (user: User, token: string, client: string) => {

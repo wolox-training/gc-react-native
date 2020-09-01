@@ -1,11 +1,6 @@
-import { HEADERS } from 'apisauce';
+import { ApiResponse, HEADERS } from 'apisauce';
 
 import { User } from './authorization';
-
-export interface Headers {
-  token: string;
-  client: string;
-}
 
 export interface AuthorizationResponseHeaders extends HEADERS {
   token: string;
@@ -15,3 +10,7 @@ export interface AuthorizationResponseHeaders extends HEADERS {
 export interface LoginResponse {
   data: User;
 }
+
+export type LoginApiResponse = ApiResponse<LoginResponse, string>;
+
+export type PromiseLoginResponse = Promise<LoginApiResponse>;
