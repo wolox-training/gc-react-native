@@ -32,19 +32,19 @@ export interface BookProps {
   onClick: () => void;
 }
 
-interface BookAction {
+interface GetBooksAction {
   type: typeof actions.GET_BOOKS;
   payload: Book[];
 }
 
-interface BookSuccessAction {
+interface GetBooksSuccessAction {
   type: typeof actions.GET_BOOKS_SUCCESS;
   payload: Book[];
 }
 
-interface BookFailureAction {
+interface GetBooksFailureAction {
   type: typeof actions.GET_BOOKS_FAILURE;
   payload: string;
 }
 
-export type BooksAction = BookAction | BookSuccessAction | BookFailureAction;
+export type BooksAction = GetBooksAction | GetBooksSuccessAction | GetBooksFailureAction;

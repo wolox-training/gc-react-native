@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 
 import { login, setAuthorizationData } from '../../services/AuthorizationService';
 import { Credentials, User } from '../../app/interfaces/authorization';
-import { LoginResponse, Headers } from '../../app/interfaces/api';
+import { LoginResponse, AuthorizationResponseHeaders } from '../../app/interfaces/api';
 
 export const actions = {
   LOGIN: 'LOGIN',
@@ -16,8 +16,8 @@ export const actionCreators = {
     dispatch({ type: actions.LOGIN });
     const response: ApiResponse<LoginResponse, string> = await login(credentials);
     if (response.ok) {
-      const { client, 'access-token': token }: any = response.headers;
-      const user: any = response.data?.data;
+      const { 'access-token': token, client } = response.headers as AuthorizationResponseHeaders;
+      const user = response.data?.data as User;
       setAuthorizationData(user, token, client).then(() =>
         dispatch({ type: actions.LOGIN_SUCCESS, payload: user })
       );
@@ -28,7 +28,9 @@ export const actionCreators = {
       });
     }
   },
-  rehydrateAuthorization: (user: User, { token, client }: Headers) => (dispatch: Dispatch) => {
+  rehydrateAuthorization: (user: User, { token, client }: AuthorizationResponseHeaders) => (
+    dispatch: Dispatch
+  ) => {
     setAuthorizationData(user, token, client).then(() =>
       dispatch({ type: actions.LOGIN_SUCCESS, payload: user })
     );

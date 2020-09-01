@@ -1,3 +1,5 @@
+import { HEADERS } from 'apisauce';
+
 import { User } from './authorization';
 
 export interface Headers {
@@ -5,10 +7,11 @@ export interface Headers {
   client: string;
 }
 
-export interface LoginResponse {
-  data: User | undefined;
+export interface AuthorizationResponseHeaders extends HEADERS {
+  token: string;
+  client: string;
 }
 
-export interface UserResponse {
-  user: User;
+export interface LoginResponse {
+  data: User | undefined;
 }
