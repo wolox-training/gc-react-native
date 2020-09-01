@@ -1,3 +1,5 @@
+import { Dispatch } from 'redux';
+
 import { getBookList } from '../../services/BookService';
 
 export const actions = {
@@ -7,7 +9,7 @@ export const actions = {
 };
 
 export const actionCreator = {
-  getBooks: () => async (dispatch) => {
+  getBooks: () => async (dispatch: Dispatch) => {
     dispatch({ type: actions.GET_BOOKS });
     const response = await getBookList();
     if (response.ok) {

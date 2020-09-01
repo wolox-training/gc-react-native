@@ -1,3 +1,5 @@
+import { AuthorizationAction } from '../../app/interfaces/authorization';
+
 import { actions } from './actions';
 
 const initialState = {
@@ -6,7 +8,7 @@ const initialState = {
   userError: {}
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: AuthorizationAction) => {
   switch (action.type) {
     case actions.LOGIN:
       return {

@@ -1,3 +1,5 @@
+import { BooksAction } from '../../app/interfaces/books';
+
 import { actions } from './actions';
 
 const initialState = {
@@ -6,7 +8,7 @@ const initialState = {
   booksError: ''
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: BooksAction) => {
   switch (action.type) {
     case actions.GET_BOOKS:
       return {

@@ -1,3 +1,5 @@
+import { actions } from '../../redux/books/actions';
+
 import { CommentsProps } from './comments';
 
 export interface Book {
@@ -29,3 +31,20 @@ export interface BookProps {
   book: Book;
   onClick: () => void;
 }
+
+interface BookAction {
+  type: typeof actions.GET_BOOKS;
+  payload: Book[];
+}
+
+interface BookSuccessAction {
+  type: typeof actions.GET_BOOKS_SUCCESS;
+  payload: Book[];
+}
+
+interface BookFailureAction {
+  type: typeof actions.GET_BOOKS_FAILURE;
+  payload: string;
+}
+
+export type BooksAction = BookAction | BookSuccessAction | BookFailureAction;
