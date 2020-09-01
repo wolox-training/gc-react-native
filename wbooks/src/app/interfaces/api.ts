@@ -13,5 +13,5 @@ export interface AuthorizationResponseHeaders extends HEADERS {
 }
 
 export interface LoginResponse {
-  data: User | undefined;
+  data: User;
 }
