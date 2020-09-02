@@ -11,6 +11,4 @@ export interface LoginResponse {
   data: User;
 }
 
-export type LoginApiResponse = ApiResponse<LoginResponse, string>;
-
-export type PromiseLoginResponse = Promise<LoginApiResponse>;
+export type PromiseLoginResponse = Promise<ApiResponse<LoginResponse, string>>;

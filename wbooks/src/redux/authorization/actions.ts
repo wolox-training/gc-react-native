@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 
 import { login, setAuthorizationData } from '../../services/AuthorizationService';
 import { Credentials, User } from '../../app/interfaces/authorization';
-import { LoginApiResponse, AuthorizationResponseHeaders } from '../../app/interfaces/api';
+import { AuthorizationResponseHeaders } from '../../app/interfaces/api';
 
 export const actions = {
   LOGIN: 'LOGIN',
@@ -13,7 +13,7 @@ export const actions = {
 export const actionCreators = {
   login: (credentials: Credentials) => async (dispatch: Dispatch) => {
     dispatch({ type: actions.LOGIN });
-    const response: LoginApiResponse = await login(credentials);
+    const response = await login(credentials);
     if (response.ok) {
       const { 'access-token': token, client } = response.headers as AuthorizationResponseHeaders;
       const user = response.data!.data;
