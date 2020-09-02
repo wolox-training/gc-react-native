@@ -16,7 +16,7 @@ export const actionCreators = {
     const response: LoginApiResponse = await login(credentials);
     if (response.ok) {
       const { 'access-token': token, client } = response.headers as AuthorizationResponseHeaders;
-      const user = response.data?.data as User;
+      const user = response.data!.data;
       setAuthorizationData(user, token, client).then(() =>
         dispatch({ type: actions.LOGIN_SUCCESS, payload: user })
       );
