@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, connect } from 'react-redux';
 import { ImageBackground, View, Text, Image, TextInput } from 'react-native';
 
 import Button from '../../components/Button';
+import loading from '../../components/Loading';
 import { AppState } from '../../interfaces/appState';
 import { validateEmail, validatePassword } from '../../../utils/validations';
 import { actionCreators } from '../../../redux/authorization/actions';
@@ -69,4 +70,6 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state: AppState) => ({ loading: state.authorization.userLoading });
+
+export default connect(mapStateToProps)(loading(Login));
