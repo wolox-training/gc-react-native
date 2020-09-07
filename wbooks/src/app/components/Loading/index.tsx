@@ -5,12 +5,12 @@ import { darkLightBlue } from '../../../constants/colors';
 
 import styles from './styles';
 
-interface WithLoadingProps {
+interface LoadingProps {
   loading: boolean;
 }
 
-function Loading<P extends object>(Component: ComponentType<P>): FC<P & WithLoadingProps> {
-  return ({ loading, ...props }: WithLoadingProps) =>
+function Loading<P extends object>(Component: ComponentType<P>): FC<P & LoadingProps> {
+  return ({ loading, ...props }: LoadingProps) =>
     loading ? (
       <View style={styles.loader}>
         <ActivityIndicator size="large" color={darkLightBlue} />
