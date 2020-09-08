@@ -23,3 +23,8 @@ export const getAuthorizationData = () =>
     const parsedData = authorization.map(([key, value]) => [key, value && JSON.parse(value)]);
     return Object.fromEntries(parsedData);
   });
+
+export const removeAuthorizationData = () => {
+  AsyncStorage.removeItem(STORAGE.user);
+  AsyncStorage.removeItem(STORAGE.authorizationHeaders);
+};
