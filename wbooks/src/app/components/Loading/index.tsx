@@ -9,7 +9,7 @@ interface LoadingProps {
   loading: boolean;
 }
 
-function Loading<P extends object>(Component: ComponentType<P>): FC<P & LoadingProps> {
+function WithLoading<P extends object>(Component: ComponentType<P>): FC<P & LoadingProps> {
   return ({ loading, ...props }: LoadingProps) =>
     loading ? (
       <View style={styles.loader}>
@@ -20,4 +20,4 @@ function Loading<P extends object>(Component: ComponentType<P>): FC<P & LoadingP
     );
 }
 
-export default Loading;
+export default WithLoading;
