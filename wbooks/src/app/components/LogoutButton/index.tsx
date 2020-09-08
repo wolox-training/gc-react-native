@@ -3,6 +3,7 @@ import { Image, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import { actionCreators } from '../../../redux/authorization/actions';
+
 import user from './assets/user.png';
 import styles from './styles';
 
