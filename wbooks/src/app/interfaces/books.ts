@@ -1,10 +1,12 @@
+import { actions } from '../../redux/books/actions';
+
 import { CommentsProps } from './comments';
 
 export interface Book {
   id: string;
   author: string;
   title: string;
-  image: string;
+  image: Image;
   editor: string;
   year: string;
   genre: string;
@@ -15,17 +17,12 @@ export interface Book {
   rents: any;
 }
 
-export interface BooksResponse {
-  page: Book[];
-  count: number;
-  totalPages: number;
-  totalCount: number;
-  currentPage: number;
-  nextPage: number;
+export interface Image {
+  url: string;
 }
 
 export interface BooksState {
-  books: BooksResponse;
+  books: Book[];
   booksLoading: boolean;
   booksError: string;
 }
@@ -34,3 +31,20 @@ export interface BookProps {
   book: Book;
   onClick: () => void;
 }
+
+interface GetBooksAction {
+  type: typeof actions.GET_BOOKS;
+  payload: Book[];
+}
+
+interface GetBooksSuccessAction {
+  type: typeof actions.GET_BOOKS_SUCCESS;
+  payload: Book[];
+}
+
+interface GetBooksFailureAction {
+  type: typeof actions.GET_BOOKS_FAILURE;
+  payload: string;
+}
+
+export type BooksAction = GetBooksAction | GetBooksSuccessAction | GetBooksFailureAction;
