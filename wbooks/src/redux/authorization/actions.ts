@@ -1,13 +1,14 @@
 import { Dispatch } from 'redux';
 
-import { login, setAuthorizationData } from '../../services/AuthorizationService';
+import { login, setAuthorizationData, removeAuthorizationData } from '../../services/AuthorizationService';
 import { Credentials, User } from '../../app/interfaces/authorization';
 import { AuthorizationResponseHeaders } from '../../app/interfaces/api';
 
 export const actions = {
   LOGIN: 'LOGIN',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
-  LOGIN_FAILURE: 'LOGIN_FAILURE'
+  LOGIN_FAILURE: 'LOGIN_FAILURE',
+  LOGOUT: 'LOGOUT'
 };
 
 export const actionCreators = {
@@ -33,5 +34,9 @@ export const actionCreators = {
     setAuthorizationData(user, token, client).then(() =>
       dispatch({ type: actions.LOGIN_SUCCESS, payload: user })
     );
+  },
+  logout: () => (dispatch: Dispatch) => {
+    removeAuthorizationData();
+    dispatch({ type: actions.LOGOUT });
   }
 };

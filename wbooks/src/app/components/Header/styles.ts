@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
     height: 110,
     flexDirection: 'row',
     alignItems: 'center'
-  },
-  leftSpace: {
-    marginLeft: 40
   }
 });
 
